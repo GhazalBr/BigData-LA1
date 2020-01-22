@@ -83,7 +83,10 @@ def count(filename):
     Test file: tests/test_count.py
     Note: The return value should be an integer
     '''
-    
+    with open(filename) as f:
+        reader = csv.reader(f)
+        count = sum (1 for row in reader)-1
+        print(count)
     # ADD YOUR CODE HERE
     raise ExceptionException("Not implemented yet")
 
